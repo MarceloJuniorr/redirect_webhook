@@ -1,0 +1,13 @@
+{
+  "name": "redirect_webhook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Marcelo Junior",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
