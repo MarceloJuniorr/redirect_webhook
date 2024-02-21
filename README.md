@@ -20,11 +20,31 @@ A aplicação pode ser configurada através de variáveis de ambiente no arquivo
 - `WEBHOOK_PASS`: Senha usada para autenticação no servidor de destino.
 - `PORT`: Porta na qual a aplicação irá rodar. Esta porta deve corresponder à especificada na seção `ports`.
 
-## Utilização
+## Utilização em produção
 
 Siga os passos abaixo para colocar sua aplicação em funcionamento:
 
-1. **Preparação**: Clone o repositório do projeto ou baixe os arquivos necessários para o seu ambiente de trabalho.
+1. **Preparação**: Crie o arquivo docker-compose.yml (ou com o nome que desejar) com o seguinte conteudo:
+
+```bash
+version: "3.7"
+services:
+  redirect_webhook:
+    image: marcelogbjunior/redirect_webhook:1.0.0
+    network_mode: "host"
+    container_name: redirect_webhook
+    environment:
+      - WEBHOOK_URL=https://webhook.site/
+      - WEBHOOK_USER=user
+      - WEBHOOK_PASS=pass
+      - PORT=3000
+    ports:
+      - 3000
+    volumes:
+      - ".:/web"
+    restart: always
+```
+
 
 2. **Configuração**: Abra o arquivo `docker-compose.yml` e ajuste as variáveis de ambiente conforme descrito na seção de configuração.
 
