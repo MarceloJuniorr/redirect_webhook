@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  redirect_webhook:
+    image: marcelogbjunior/redirect_webhook:1.0.0
+    network_mode: "host"
+    container_name: redirect_webhook
+    environment:
+      - WEBHOOK_URL=https://webhook.site/292c452e-0824-4307-8d59-f05d1af329d5
+      - WEBHOOK_USER=user
+      - WEBHOOK_PASS=pass
+      - PORT=3000
+    ports:
+      - 3000
+    volumes:
+      - ".:/web"
+    restart: always
