@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Esta aplicação serve como um intermediário, recebendo notificações sem autenticação e redirecionando-as para um servidor que exige autenticação. Funciona como um middleware sem servidor, facilitando a integração entre sistemas de webhook com diferentes requisitos de segurança.
+Esta aplicação serve como um middleware, recebendo notificações sem autenticação e redirecionando-as para um servidor que exige autenticação. Facilitando a integração entre sistemas de webhook com diferentes requisitos de segurança.
 
 ## Pré-Requisitos
 
